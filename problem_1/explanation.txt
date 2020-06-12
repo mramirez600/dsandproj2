@@ -1,0 +1,22 @@
+Problem 1: LRU Cache
+Explanation
+
+Data Structure(s) Used: Doubly Linked List and Dictionary
+
+To keep the runtime O(1), I mapped the key in cache and used it as a dictionary to allow for constant time access.
+
+There are two cases we need to consider with get and set:
+• Key is in cache
+• Key isn’t in cache
+
+In the given cases, we need to access the dictionary:
+  • In get and set when key is in the cache, we need to remove the Node from recently used
+  and push it back into the front
+
+  • In set when key isn’t in the cache, we need to:
+    • Check and handle the capacity - if it’s full we need to delete the oldest entry
+    • Add the key to the front of cache
+
+The Doubly Linked List and Dictionary alllow for O(1) access and removal regardless of the size of the object (in this case 5).
+
+Space Complexity is because I used a dictionary for cache
